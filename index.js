@@ -1,7 +1,7 @@
 require("dotenv").config();
 const inquirer = require("inquirer");
-const sequelize = require("./db/connection.js");
-const db = require("./db");
+const sequelize = require("./config");
+const db = require("./models");
 require("console.table");
 
 inquirer.prompt([{

@@ -1,0 +1,30 @@
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config");
+
+class Role extends Model {}
+
+Role.init(
+  {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    salary: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    department_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    timestamps: true,
+    modelName: "role",
+  }
+);
+
+module.exports = Role;
